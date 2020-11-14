@@ -9,7 +9,10 @@
   "author": "Gabriel Gurris - Matheus Cruz",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "nodemon": "^2.0.6"
+    "mysql2": "^2.2.5",
+    "nodemon": "^2.0.6",
+    "sequelize": "^5.21.10"
   }
 }
