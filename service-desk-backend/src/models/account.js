@@ -38,5 +38,11 @@ module.exports = (sequelize, DataTypes) => {                    //objeto mandado
         }
     });
 
+    Account.prototype.toJSON = function () { //tem q ser uma function por causa do this, para ele apontar pro Account
+        const values = { ...this.get() };
+        delete values.password;     //nao retorna a senha no JSON
+        return values;
+    }
+
     return Account;
 }
