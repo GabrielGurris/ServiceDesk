@@ -4,6 +4,9 @@ const db = require('./models');
 
 const authController = require('./controllers/auth');
 
+app.use(express.json()); //receber os dados em JSON 
+app.use(express.urlencoded({ extended: false })); //pegar o body da requisição
+
 app.use('/auth', authController);
 /*  criando o acesso de authController atraves de 
     /auth/sign-in
