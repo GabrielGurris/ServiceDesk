@@ -1,8 +1,12 @@
 const express = require('express');
-const app = express();
 const db = require('./models');
+const response = require('./middlewares/response');
 
 const authController = require('./controllers/auth');
+
+const app = express();
+
+app.use(response); //middleware Global
 
 app.use(express.json()); //receber os dados em JSON 
 app.use(express.urlencoded({ extended: false })); //pegar o body da requisição
