@@ -35,6 +35,10 @@ module.exports = (sequelize, DataTypes) => {                    //objeto mandado
         password: {
             type: DataTypes.STRING,
             allowNull: false,
+        },
+        password_confirmation: {
+            type: DataTypes.STRING,
+            allowNull: false,
         }
     });
 
