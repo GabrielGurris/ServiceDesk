@@ -8,11 +8,12 @@ Content-Type: {{contentType}}
 {
     "name": "Gabriel Gurris", 
     "email": "gabriel2gurris@outlook.com",
+    "password": "1234",
+    "password_confirmation": "1234"
     "address": "Avenida itavuvu", 
     "naddress": "8944", 
     "neighborhood": "Distrito industrial", 
     "cep": "18000-899", 
     "phone1": "15997456321", 
-    "phone2": "15997256389", 
-    "password": "1234"
+    "phone2": "15997256389",   
 } 
