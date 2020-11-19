@@ -16,8 +16,26 @@ const rules = {
 
 const options = { abortEarly: false };
 
+const accountSignIn = (req, res, next) => {
+    const { email, password } = req.body;
+
+    const schema = Joi.object({
+        email: rules.email,
+        password: rules.password
+    });
+
+    const { error } = schema.validate({ email, password }, options); //validando a senha, se encontrar um dado incorreto ele ja para e retorna erro
+
+    if (error) {
+        const messages = getValidatorError(error, 'account.signin');
+        return res.jsonBadRequest(null, null, { error: messages }) //dados, mensagem, metadados 
+    }
+
+    next();
+}
+
 const accountSignUp = (req, res, next) => {
-    const { email, password, password_confirmation } = req.body;
+    const { name, email, password, password_confirmation, address, naddress, neighborhood, cep, phone1, phone2 } = req.body;
 
     const schema = Joi.object({
         name: rules.name,
@@ -42,4 +60,4 @@ const accountSignUp = (req, res, next) => {
     next();
 }
 
-module.exports = { accountSignUp };
+module.exports = { accountSignUp, accountSignIn };

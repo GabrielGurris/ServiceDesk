@@ -1,8 +1,8 @@
 @baseUrl = http://localhost:3001
 @contentType = application/json
 
-### Create a Account
-GET {{baseUrl}}/auth/sign-up
+### Criando uma conta
+POST {{baseUrl}}/auth/sign-up
 Content-Type: {{contentType}}
 
 {
@@ -16,4 +16,13 @@ Content-Type: {{contentType}}
     "cep": "18000-899", 
     "phone1": "15997456321", 
     "phone2": "15997256389",   
+} 
+
+### Logando a conta
+POST {{baseUrl}}/auth/sign-in
+Content-Type: {{contentType}}
+
+{
+    "email": "gabriel2gurris@outlook.com",
+    "password": "1234"
 } 
