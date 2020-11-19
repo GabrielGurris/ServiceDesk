@@ -3,6 +3,7 @@ const db = require('./models');
 const response = require('./middlewares/response');
 
 const authController = require('./controllers/auth');
+const accountController = require('./controllers/account');
 
 const app = express();
 
@@ -16,6 +17,9 @@ app.use('/auth', authController);
     /auth/sign-in
     /auth/sign-up
  */
+app.use('/myAccount', accountController);
+/* criando rotas para ver os dados e edição de conta
+*/
 
 app.get('/', (req, res) => {
     return res.json('Api running....');
